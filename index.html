@@ -2,50 +2,51 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Grey-NX Pack</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&display=swap" rel="stylesheet">
   <style>
     body {
-      background-color: #121212;
+      background-color: #151517;
       color: #e0e0e0;
       font-family: 'Inter', sans-serif;
       font-weight: 600;
       font-size: 17px;
       margin: 0;
-      padding: 25px;
+      padding: 40px;
       display: flex;
       justify-content: center;
     }
     .container {
       max-width: 960px;
       width: 100%;
-      background-color: #1e1e1e;
-      border-radius: 12px;
+      background-color: #1e1e20;
+      border-radius: 20px;
       overflow: hidden;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(8px);
     }
     header {
       text-align: center;
       padding: 25px 15px;
-      border-bottom: 1px solid #333;
-    }
-    footer {
-      text-align: center;
-      padding: 20px 0;
-      margin-top: 40px;
-      font-size: 0.9em;
-      color: #888;
     }
     h1 {
-        font-size: 2.5em;
-        margin-bottom: 10px;
-        color: #ffffff; /* Ensure h1 color is white */
+      font-size: 32px;
+      margin: 0;
     }
-    h2, h3 {
-      color: #ffffff;
+    h2 {
+      font-size: 24px;
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+    p {
+      line-height: 1.5;
+    }
+    section {
+      padding: 25px 15px;
     }
     a {
       color: #bb86fc;
@@ -54,327 +55,330 @@
     }
     a:hover {
       color: #d0b3ff;
-      text-decoration: none;
+      text-decoration: underline;
     }
-    p {
-      line-height: 1.7;
-      padding: 0 25px; /* Add padding to paragraphs for consistency */
-    }
-    section {
-      padding: 0 25px; /* Add padding to sections for consistency */
-    }
-    .guide-link {
-      margin: 20px 0;
-      padding: 0 25px;
-    }
-    .guide-link h2 {
-      margin-top: 2em;
-      border-bottom: 1px solid #444;
-      padding-bottom: 8px;
+    .table-wrapper {
+        background-color: rgba(187, 134, 252, 0.8);
+        padding: 1.8px;
+        border-radius: 12px;
+        margin-top: 20px;
     }
     table {
       width: 100%;
       border-collapse: collapse;
-      margin: 20px 0;
-      font-size: 0.9em;
-      background-color: #2a2a2a; /* Slightly darker background for table */
-      border-radius: 8px; /* Rounded corners for the table */
-      overflow: hidden; /* Ensures rounded corners apply to content */
+      color: #e0e0e0;
+      border: none;
     }
     th, td {
-      padding: 12px 15px; /* Increased padding for better readability */
-      border: 1px solid #3a3a3a; /* Lighter border for contrast */
+      padding: 12px 15px;
       text-align: left;
+      border-bottom: 1px solid #333;
     }
     th {
-      background-color: #333333; /* Darker header background */
-      color: #ffffff;
+      background-color: #28282b;
       font-weight: 600;
     }
-    td {
-        color: #e0e0e0;
+    tr:last-child td {
+      border-bottom: none;
     }
-    td a {
-        font-weight: 500; /* Make links in table slightly less bold */
+    tr:nth-child(even) {
+      background-color: #242427;
+    }
+    tr:nth-child(odd) {
+      background-color: #1e1e20;
+    }
+    .table-responsive {
+      overflow-x: auto;
+      border-radius: 10px;
     }
     .download-section {
-      margin-top: 60px;
-      padding: 0 15px;
       text-align: center;
-    }
-    .download-section h2 {
-      margin-bottom: 30px;
-      font-size: 2em;
-      color: #ffffff;
+      background-color: #1e1e20;
+      padding: 25px 15px;
     }
     .download-buttons {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       gap: 15px;
-      flex-wrap: wrap;
+      margin-top: 20px;
     }
     .download-buttons a {
-      background-color: #007BFF;
+      background-color: #1e1e20;
       color: #ffffff;
-      padding: 12px 22px;
+      padding: 12px 24px;
       border-radius: 8px;
       text-decoration: none;
-      font-size: 0.95em;
-      font-weight: 500;
-      transition: all 0.25s ease-in-out;
+      font-weight: 600;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      white-space: nowrap;
+      border: 1px solid rgba(255, 255, 255, 0.1);
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      border: 1px solid transparent;
     }
     .download-buttons a:hover {
-      background-color: #006fe6;
-      transform: translateY(-3px);
-      box-shadow: 0 7px 15px rgba(0, 0, 0, 0.25);
-    }
-    .releases-button {
-      display: inline-block;
-      background-color: #8A2BE2;
-      color: #ffffff;
-      padding: 14px 30px;
-      border-radius: 50px;
+      background-color: #38383b;
       text-decoration: none;
-      font-size: 1em;
-      font-weight: 500;
-      transition: all 0.25s ease-in-out;
-      margin-top: 45px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     }
-    .releases-button:hover {
-      background-color: #7b25c9;
-      transform: translateY(-3px);
-      box-shadow: 0 7px 15px rgba(0, 0, 0, 0.25);
+    footer {
+      text-align: center;
+      font-size: 14px;
+      padding: 25px 15px;
+      color: #888;
     }
-    /* Removed .language-links section as requested */
+    .centered-link {
+        display: block;
+        text-align: center;
+        margin: 20px 0;
+    }
+    .gradient-button {
+      display: inline-block;
+      padding: 15px 30px;
+      border-radius: 9999px;
+      font-weight: 600;
+      background-image: linear-gradient(to right, #6d28d9, #9333ea);
+      transition: background-image 0.3s ease-in-out, box-shadow 0.3s ease;
+      color: #fff;
+    }
+    .gradient-button:hover {
+      background-image: linear-gradient(to right, #9333ea, #6d28d9);
+      box-shadow: 0 10px 20px rgba(109, 40, 217, 0.3);
+      text-decoration: none; /* Removed underline on hover */
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <header>
-      <h1>Grey-NX Pack Webseite</h1>
-      <p>Das ist das Grey-NX Pack, ein einfaches Nintendo Switch CFW Pack, basierend auf Stabilität.</p>
+      <h1>Grey-NX-Pack Webseite</h1>
+      <p>Das hier ist das Grey-NX Pack, ein einfaches Nintendo Switch CFW Pack, basierend auf Stabilität.</p>
     </header>
 
-    <section class="guide-link">
+    <section>
       <h2>Hier der entsprechende Link zu dem Hacking Guide:</h2>
       <p>Offizielles Tutorial: <a href="https://switch.hacks.guide/" target="_blank">Switch-Hacks-Guide</a></p>
     </section>
 
     <section>
       <h2>CFW Daten/Homebrew Apps</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>CFW Daten/Homebrew Apps</th>
-            <th>Advanced Pack</th>
-            <th>Standard Pack</th>
-            <th>Minimal Pack</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><a href="https://github.com/Atmosphere-NX/Atmosphere/releases/tag/1.9.2" target="_blank">Atmosphere</a></td>
-            <td>✅</td>
-            <td>✅</td>
-            <td>✅</td>
-          </tr>
-          <tr>
-            <td><a href="https://gbatemp.net/threads/sigpatches-for-atmosphere-hekate-fss0-fusee-package3.571543/page-177#post-10438165" target="_blank">Sigpatches</a></td>
-            <td>✅</td>
-            <td>✅</td>
-            <td>✅</td>
-          </tr>
-          <tr>
-            <td><a href="https://github.com/impeeza/sys-patch/releases/tag/v1.5.6" target="_blank">Sys-Patches</a></td>
-            <td>✅</td>
-            <td>✅</td>
-            <td>✅</td>
-          </tr>
-          <tr>
-            <td><a href="https://github.com/ppkantorski/nx-ovlloader/releases/tag/v1.1.0" target="_blank">nx-ovlloader</a></td>
-            <td>✅</td>
-            <td>✅</td>
-            <td>✅</td>
-          </tr>
-          <tr>
-            <td><a href="https://github.com/Kofysh/Lockpick_RCM/releases/tag/v1.9.15" target="_blank">Lockpick RCM</a></td>
-            <td>✅</td>
-            <td>✅</td>
-            <td>✅</td>
-          </tr>
-          <tr>
-            <td><a href="https://github.com/Team-Neptune/CommonProblemResolver/releases/tag/v0.3.5" target="_blank">ProblemResolver</a></td>
-            <td>✅</td>
-            <td>✅</td>
-            <td>✅</td>
-          </tr>
-          <tr>
-            <td><a href="https://github.com/suchmememanyskill/TegraExplorer/releases/tag/4.2.0" target="_blank">TegraExplorer</a></td>
-            <td>✅</td>
-            <td>✅</td>
-            <td>✅</td>
-          </tr>
-          <tr>
-            <td><a href="https://github.com/CTCaer/hekate/releases/tag/v6.3.1" target="_blank">Hekate</a></td>
-            <td>✅</td>
-            <td>✅</td>
-            <td>✅</td>
-          </tr>
-          <tr>
-            <td><a href="https://github.com/switchbrew/nx-hbmenu/releases/tag/v3.6.0" target="_blank">HB-Menu</a></td>
-            <td>✅</td>
-            <td>✅</td>
-            <td>✅</td>
-          </tr>
-          <tr>
-            <td><a href="https://github.com/fortheusers/hb-appstore/releases/tag/v2.3.2" target="_blank">Homebrew App Store</a></td>
-            <td>✅</td>
-            <td>✅</td>
-            <td>✅</td>
-          </tr>
-          <tr>
-            <td><a href="https://github.com/ppkantorski/Ultrahand-Overlay/releases/tag/v1.8.2" target="_blank">Ultrahand</a></td>
-            <td>✅</td>
-            <td>✅</td>
-            <td>✅</td>
-          </tr>
-          <tr>
-            <td><a href="https://github.com/ndeadly/MissionControl/releases/tag/v0.13.3" target="_blank">Mission Control</a></td>
-            <td>✅</td>
-            <td>✅</td>
-            <td>✅</td>
-          </tr>
-          <tr>
-            <td><a href="https://github.com/masagrator/Status-Monitor-Overlay/releases/tag/1.1.9" target="_blank">Status Monitor</a></td>
-            <td>✅</td>
-            <td>✅</td>
-            <td>✅</td>
-          </tr>
-          <tr>
-            <td><a href="https://github.com/suchmememanyskill/switch-90dns-setter/releases" target="_blank">90DNS Setter</a></td>
-            <td>✅</td>
-            <td>✅</td>
-            <td>✅</td>
-          </tr>
-          <tr>
-            <td><a href="https://github.com/meganukebmp/Switch_90DNS_tester/releases/tag/v1.0.4" target="_blank">90DNS Tester</a></td>
-            <td>✅</td>
-            <td>✅</td>
-            <td>✅</td>
-          </tr>
-          <tr>
-            <td><a href="https://github.com/ppkantorski/Mod-Alchemist/releases/tag/v0.5.4" target="_blank">Mod-Alchemist</a></td>
-            <td>✅</td>
-            <td>✅</td>
-            <td>✅</td>
-          </tr>
-          <tr>
-            <td><a href="https://github.com/Atmosphere-NX/Atmosphere/releases/tag/1.8.0-prerelease" target="_blank">Daybreak</a></td>
-            <td>✅</td>
-            <td>✅</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><a href="https://github.com/rashevskyv/dbi/releases/tag/658" target="_blank">DBI</a></td>
-            <td>✅</td>
-            <td>✅</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><a href="https://github.com/mtheall/ftpd/releases/tag/v3.2.1" target="_blank">FTPD</a></td>
-            <td>✅</td>
-            <td>✅</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><a href="https://github.com/J-D-K/JKSV/releases/tag/11%2F05%2F2024" target="_blank">JKSV</a></td>
-            <td>✅</td>
-            <td>✅</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><a href="https://github.com/BernardoGiordano/Checkpoint/releases/tag/v3.10.1" target="_blank">Checkpoint</a></td>
-            <td>✅</td>
-            <td>✅</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><a href="https://github.com/HamletDuFromage/aio-switch-updater/releases/tag/2.23.2" target="_blank">Aio-Switch-Updater</a></td>
-            <td>✅</td>
-            <td>✅</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><a href="https://github.com/exelix11/SwitchThemeInjector/releases/tag/v4.8.1" target="_blank">NXThemeInstaller</a></td>
-            <td>✅</td>
-            <td>✅</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><a href="https://github.com/suchmememanyskill/themezer-nx/releases/tag/2.0.0" target="_blank">Themezer-NX</a></td>
-            <td>✅</td>
-            <td>✅</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><a href="https://github.com/retronx-team/sys-clk/releases/tag/2.0.1" target="_blank">Sys-Clk</a></td>
-            <td>✅</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><a href="https://github.com/XorTroll/Goldleaf/releases/tag/1.1.1" target="_blank">Goldleaf</a></td>
-            <td>✅</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><a href="https://github.com/tomvita/EdiZon-SE/releases/tag/3.8.36" target="_blank">Edizon-SE</a></td>
-            <td>✅</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><a href="https://github.com/XorTroll/emuiibo/releases/tag/1.1.1" target="_blank">emuiibo</a></td>
-            <td>✅</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><a href="https://github.com/tallbl0nde/NX-Activity-Log/releases/tag/v1.4.0" target="_blank">NX Activity Log</a></td>
-            <td>✅</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><a href="https://github.com/XITRIX/Moonlight-Switch/releases/tag/v1.3.3" target="_blank">Moonlight</a></td>
-            <td>✅</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><a href="https://github.com/proferabg/EdiZon-Overlay/releases/tag/v1.0.10" target="_blank">Edizon Overlay</a></td>
-            <td>✅</td>
-            <td></td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="table-wrapper">
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>CFW Daten/Homebrew Apps</th>
+                <th>Advanced Pack</th>
+                <th>Standard Pack</th>
+                <th>Minimal Pack</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a href="https://github.com/Atmosphere-NX/Atmosphere/releases/tag/1.9.4" target="_blank">Atmosphere</a></td>
+                <td>✅</td>
+                <td>✅</td>
+                <td>✅</td>
+              </tr>
+              <tr>
+                <td><a href="https://gbatemp.net/threads/sigpatches-for-atmosphere-hekate-fss0-fusee-package3.571543/page-177#post-10438165" target="_blank">Sigpatches</a></td>
+                <td>✅</td>
+                <td>✅</td>
+                <td>✅</td>
+              </tr>
+              <tr>
+                <td><a href="https://github.com/impeeza/sys-patch/releases/tag/v1.5.6" target="_blank">Sys-Patches</a></td>
+                <td>✅</td>
+                <td>✅</td>
+                <td>✅</td>
+              </tr>
+              <tr>
+                <td><a href="https://github.com/ppkantorski/nx-ovlloader/releases/tag/v1.1.1" target="_blank">nx-ovlloader</a></td>
+                <td>✅</td>
+                <td>✅</td>
+                <td>✅</td>
+              </tr>
+              <tr>
+                <td><a href="https://github.com/Kofysh/Lockpick_RCM/releases/tag/v1.9.15" target="_blank">Lockpick RCM</a></td>
+                <td>✅</td>
+                <td>✅</td>
+                <td>✅</td>
+              </tr>
+              <tr>
+                <td><a href="https://github.com/Team-Neptune/CommonProblemResolver/releases/tag/v0.3.5" target="_blank">ProblemResolver</a></td>
+                <td>✅</td>
+                <td>✅</td>
+                <td>✅</td>
+              </tr>
+              <tr>
+                <td><a href="https://github.com/suchmememanyskill/TegraExplorer/releases/tag/4.2.0" target="_blank">TegraExplorer</a></td>
+                <td>✅</td>
+                <td>✅</td>
+                <td>✅</td>
+              </tr>
+              <tr>
+                <td><a href="https://github.com/CTCaer/hekate/releases/tag/v6.3.1" target="_blank">Hekate</a></td>
+                <td>✅</td>
+                <td>✅</td>
+                <td>✅</td>
+              </tr>
+              <tr>
+                <td><a href="https://github.com/switchbrew/nx-hbmenu/releases/tag/v3.6.0" target="_blank">HB-Menu</a></td>
+                <td>✅</td>
+                <td>✅</td>
+                <td>✅</td>
+              </tr>
+              <tr>
+                <td><a href="https://github.com/fortheusers/hb-appstore/releases/tag/v2.3.2" target="_blank">Homebrew App Store</a></td>
+                <td>✅</td>
+                <td>✅</td>
+                <td>✅</td>
+              </tr>
+              <tr>
+                <td><a href="https://github.com/ppkantorski/Ultrahand-Overlay/releases/tag/v2.1.1" target="_blank">Ultrahand</a></td>
+                <td>✅</td>
+                <td>✅</td>
+                <td>✅</td>
+              </tr>
+              <tr>
+                <td><a href="https://github.com/ndeadly/MissionControl/releases/tag/v0.13.5" target="_blank">Mission Control</a></td>
+                <td>✅</td>
+                <td>✅</td>
+                <td>✅</td>
+              </tr>
+              <tr>
+                <td><a href="https://github.com/masagrator/Status-Monitor-Overlay/releases/tag/1.2.2" target="_blank">Status Monitor</a></td>
+                <td>✅</td>
+                <td>✅</td>
+                <td>✅</td>
+              </tr>
+              <tr>
+                <td><a href="https://github.com/suchmememanyskill/switch-90dns-setter/releases" target="_blank">90DNS Setter</a></td>
+                <td>✅</td>
+                <td>✅</td>
+                <td>✅</td>
+              </tr>
+              <tr>
+                <td><a href="https://github.com/meganukebmp/Switch_90DNS_tester/releases/tag/v1.0.4" target="_blank">90DNS Tester</a></td>
+                <td>✅</td>
+                <td>✅</td>
+                <td>✅</td>
+              </tr>
+              <tr>
+                <td><a href="https://github.com/ppkantorski/Alchemist/releases/tag/v1.0.1" target="_blank">Mod-Alchemist</a></td>
+                <td>✅</td>
+                <td>✅</td>
+                <td>✅</td>
+              </tr>
+              <tr>
+                <td><a href="https://github.com/Atmosphere-NX/Atmosphere/releases/tag/1.9.4" target="_blank">Daybreak</a></td>
+                <td>✅</td>
+                <td>✅</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><a href="https://github.com/rashevskyv/dbi/releases/tag/658" target="_blank">DBI</a></td>
+                <td>✅</td>
+                <td>✅</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><a href="https://github.com/mtheall/ftpd/releases/tag/v3.2.1" target="_blank">FTPD</a></td>
+                <td>✅</td>
+                <td>✅</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><a href="https://github.com/J-D-K/JKSV/releases/tag/09%2F13%2F2025" target="_blank">JKSV</a></td>
+                <td>✅</td>
+                <td>✅</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><a href="https://github.com/BernardoGiordano/Checkpoint/releases/tag/v3.10.1" target="_blank">Checkpoint</a></td>
+                <td>✅</td>
+                <td>✅</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><a href="https://github.com/HamletDuFromage/aio-switch-updater/releases/tag/2.23.2" target="_blank">Aio-Switch-Updater</a></td>
+                <td>✅</td>
+                <td>✅</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><a href="https://github.com/exelix11/SwitchThemeInjector/releases/tag/v4.8.2" target="_blank">NXThemeInstaller</a></td>
+                <td>✅</td>
+                <td>✅</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><a href="https://github.com/suchmememanyskill/themezer-nx/releases/tag/2.0.2" target="_blank">Themezer-NX</a></td>
+                <td>✅</td>
+                <td>✅</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><a href="https://github.com/retronx-team/sys-clk/releases/tag/2.0.1" target="_blank">Sys-Clk</a></td>
+                <td>✅</td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><a href="https://github.com/XorTroll/Goldleaf/releases/tag/1.1.1" target="_blank">Goldleaf</a></td>
+                <td>✅</td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><a href="https://github.com/tomvita/EdiZon-SE/releases/tag/3.8.36" target="_blank">Edizon-SE</a></td>
+                <td>✅</td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><a href="https://github.com/XorTroll/emuiibo/releases/tag/1.1.1" target="_blank">emuiibo</a></td>
+                <td>✅</td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><a href="https://github.com/tallbl0nde/NX-Activity-Log/releases/tag/v1.4.0" target="_blank">NX Activity Log</a></td>
+                <td>✅</td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><a href="https://github.com/XITRIX/Moonlight-Switch/releases/tag/v1.3.3" target="_blank">Moonlight</a></td>
+                <td>✅</td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><a href="https://github.com/proferabg/EdiZon-Overlay/releases/tag/v1.0.10" target="_blank">Edizon Overlay</a></td>
+                <td>✅</td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </section>
 
     <section class="download-section">
       <h2>Downloads</h2>
       <div class="download-buttons">
-        <a href="https://github.com/Nico-Shock/Grey-NX-Pack/releases/latest/download/Grey_NX_Pack_Advanced.7z">Advanced Pack (163MB)</a>
-        <a href="https://github.com/Nico-Shock/Grey-NX-Pack/releases/latest/download/Grey_NX_Pack_Standart.7z">Standard Pack (96,0MB)</a>
-        <a href="https://github.com/Nico-Shock/Grey-NX-Pack/releases/latest/download/Grey_NX_Pack_Minimal.7z">Minimal Pack (44,3MB)</a>
+        <a href="https://github.com/Nico-Shock/Grey-NX-Pack/releases/latest/download/Grey_NX_Pack_Minimal.7z">Minimal Pack (39,8 MB)</a>
+        <a href="https://github.com/Nico-Shock/Grey-NX-Pack/releases/latest/download/Grey_NX_Pack_Standart.7z">Standard Pack (92,7 MB)</a>
+        <a href="https://github.com/Nico-Shock/Grey-NX-Pack/releases/latest/download/Grey_NX_Pack_Advanced.7z">Advanced Pack (159 MB)</a>
       </div>
-      <a class="releases-button" href="https://github.com/Nico-Shock/Grey-NX-Pack/releases" target="_blank">Alle Releases ansehen</a>
+      <div class="centered-link">
+        <a href="https://github.com/Nico-Shock/Grey-NX-Pack/releases" target="_blank" class="gradient-button">
+          Alle Releases ansehen
+        </a>
+      </div>
     </section>
-
+    
     <footer>
       <p>&copy; 2025 Grey-NX Pack</p>
     </footer>
